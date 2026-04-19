@@ -1,0 +1,37 @@
+{
+  "name": "XRInputActions",
+  "maps": [
+    {
+      "name": "XRActions",
+      "id": "7b0fbef8-d9a8-45cf-9cc2-0e779fa58eb5",
+      "actions": [
+        { "name": "Grab", "type": "Button", "id": "ec3ec55e-e236-4faa-894f-a60ea1365b6a", "expectedControlType": "Button" },
+        { "name": "UINavigate", "type": "Value", "id": "4031363f-7f9e-4966-9183-cf0d5d36f44a", "expectedControlType": "Vector2" },
+        { "name": "Confirm", "type": "Button", "id": "7f4e17a2-541e-4ec6-be01-204dbd4f0199", "expectedControlType": "Button" },
+        { "name": "TeleportStart", "type": "Button", "id": "0ce5874e-4379-4eff-acf6-edf03ba2f3e9", "expectedControlType": "Button" }
+      ],
+      "bindings": [
+        { "name": "", "id": "7cd85bc2-4ff2-4410-ac5d-1455e8ab65fe", "path": "<XRController>{LeftHand}/gripPressed", "action": "Grab" },
+        { "name": "", "id": "f3f72daa-9eb0-4f08-bf47-8f3f942ea702", "path": "<XRController>{RightHand}/gripPressed", "action": "Grab" },
+        { "name": "", "id": "269d31fc-ea18-49ea-b72a-da4da85d1ce3", "path": "<Keyboard>/e", "action": "Grab" },
+
+        { "name": "", "id": "01f583fb-76d9-4f33-928c-c8f3db17d7bf", "path": "<XRController>{LeftHand}/thumbstick", "action": "UINavigate" },
+        { "name": "", "id": "7f2f5fc8-5537-4b9c-91b2-49cc1f0e9da8", "path": "<XRController>{RightHand}/thumbstick", "action": "UINavigate" },
+        { "name": "WASD", "id": "5b2eb52d-f3c9-4f2a-9fb6-0abce4861f8f", "path": "2DVector", "action": "UINavigate", "isComposite": true },
+        { "name": "up", "id": "6d50f561-2d73-4adf-baf3-1fdce9ac9cf9", "path": "<Keyboard>/w", "action": "UINavigate", "isPartOfComposite": true },
+        { "name": "down", "id": "d5917c93-f7fd-49c3-a82c-0a6c9483e87f", "path": "<Keyboard>/s", "action": "UINavigate", "isPartOfComposite": true },
+        { "name": "left", "id": "edce90ff-0430-4e55-8efb-e72f2d20e084", "path": "<Keyboard>/a", "action": "UINavigate", "isPartOfComposite": true },
+        { "name": "right", "id": "0fe9cfef-a779-4038-bf79-65adf3dd7ace", "path": "<Keyboard>/d", "action": "UINavigate", "isPartOfComposite": true },
+
+        { "name": "", "id": "d8fbd3f4-95ff-460c-8a9c-90ce4a850831", "path": "<XRController>{LeftHand}/triggerPressed", "action": "Confirm" },
+        { "name": "", "id": "cc4ee843-49cf-4b27-8f26-815a9cdbf890", "path": "<XRController>{RightHand}/triggerPressed", "action": "Confirm" },
+        { "name": "", "id": "2cf0f665-37e7-4f91-a1ec-b9f29f1f8ad2", "path": "<Keyboard>/space", "action": "Confirm" },
+
+        { "name": "", "id": "4413e33d-353f-4444-9a80-f6761269c6d5", "path": "<XRController>{LeftHand}/primary2DAxisClick", "action": "TeleportStart" },
+        { "name": "", "id": "2768872e-ff9a-45ea-8e28-4e36224a98c4", "path": "<XRController>{RightHand}/primary2DAxisClick", "action": "TeleportStart" },
+        { "name": "", "id": "3e2de98a-a058-4b13-ad95-2438647882f3", "path": "<Keyboard>/t", "action": "TeleportStart" }
+      ]
+    }
+  ],
+  "controlSchemes": []
+}
