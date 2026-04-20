@@ -6,6 +6,7 @@ public class MouseDesktopController : MonoBehaviour
     public float lookSensitivity = 3f;
     public float minFov = 60f;
     public float maxFov = 110f;
+    public RectTransform LabHUD;
 
     private Camera mainCamera;
     private ChargeSpawnManager spawnManager;
@@ -48,13 +49,42 @@ public class MouseDesktopController : MonoBehaviour
             mainCamera.fieldOfView = Mathf.Clamp(mainCamera.fieldOfView - scroll * 20f, minFov, maxFov);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             if (Physics.Raycast(ray, out RaycastHit hit) && spawnManager != null)
             {
-                bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-                spawnManager.SpawnCharge(hit.point, shift ? ChargeType.Negative : ChargeType.Positive);
+                spawnManager.SpawnCharge(hit.point, ChargeType.Positive);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            if (Physics.Raycast(ray, out RaycastHit hit) && spawnManager != null)
+            {
+                spawnManager.SpawnCharge(hit.point, ChargeType.Negative);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            if (Physics.Raycast(ray, out RaycastHit hit) && spawnManager != null)
+            {
+                spawnManager.ClearAll();
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(LabHUD.gameObject.activeSelf)
+            {
+                LabHUD.gameObject.SetActive(false);
+            }
+            else
+            {
+                LabHUD.gameObject.SetActive(true);
             }
         }
 #endif
